@@ -44,6 +44,9 @@ CHANNEL_INVITE_LINK = "https://t.me/JatharPatil" # Link button for users
 # Admin Setup: Put your numeric Telegram Chat ID here to receive movie requests!
 # You can get your numeric ID from bots like @userinfobot or @MissRose_bot
 ADMIN_CHAT_ID = 0
+
+# Link to a video tutorial showing how to verify (e.g., a Telegram message link or YouTube link)
+HOW_TO_VERIFY = "https://t.me/c/3981306919/2" # Replace with your actual video link
 # ==========================
 
 def generate_verify_token(user_id):
@@ -232,8 +235,10 @@ def start_command(message):
         "**How to use:**\n"
         "Just type the **name of any movie or web series** you want to watch, and I will send you the file immediately!\n\n"
         "*(Example 1: Dhurandhar 2025)*\n"
-        "*(Example 2: Mirzapur S01 E01)*",
-        parse_mode="Markdown"
+        "*(Example 2: Mirzapur S01 E01)*\n\n"
+        f"📺 **How to verify / download:** [Watch Tutorial Video]({HOW_TO_VERIFY_VIDEO_URL})",
+        parse_mode="Markdown",
+        disable_web_page_preview=True
     )
 
 # Feature 1.5: Link shortener
@@ -424,8 +429,10 @@ def search_movie(message):
             "2. Complete the steps on the site.\n"
             "3. You will be redirected back here.\n"
             "4. Click 'Start' to finish verification.\n\n"
+            f"📺 **Need help?** [Watch Tutorial Video]({HOW_TO_VERIFY_VIDEO_URL})\n\n"
             "Once verified, you will have 12 hours of uninterrupted access! 🎬",
-            parse_mode="Markdown"
+            parse_mode="Markdown",
+            disable_web_page_preview=True
         )
         return
     
